@@ -66,7 +66,7 @@ export function SiteHeader() {
           onClick={() => setOpen(false)}
         >
           <span className="relative inline-flex h-9 w-9 overflow-hidden rounded-xl ring-2 ring-indigo-500/40">
-            <Image src="/profile.jpg" alt={resume.name} fill className="object-cover object-top" />
+            <Image src={`${basePath}/profile.jpg`} alt={resume.name} fill className="object-cover object-top" />
           </span>
           <div className="leading-tight">
             <div className="text-sm font-bold text-zinc-950 dark:text-zinc-50">{resume.name}</div>

@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export function ProfileAvatar({ name }: { name: string }) {
   const [open, setOpen] = useState(false);
 
@@ -34,7 +36,7 @@ export function ProfileAvatar({ name }: { name: string }) {
         <div className="relative rounded-full bg-gradient-to-br from-indigo-500 via-cyan-400 to-violet-500 p-[3px] shadow-2xl shadow-indigo-500/25">
           <div className="relative h-40 w-40 overflow-hidden rounded-full ring-4 ring-white dark:ring-zinc-950">
             <Image
-              src="/profile.jpg"
+              src={`${basePath}/profile.jpg`}
               alt={name}
               fill
               className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
@@ -74,7 +76,7 @@ export function ProfileAvatar({ name }: { name: string }) {
             {/* Photo */}
             <div className="overflow-hidden rounded-3xl shadow-2xl ring-2 ring-white/20">
               <Image
-                src="/profile.jpg"
+                src={`${basePath}/profile.jpg`}
                 alt={name}
                 width={480}
                 height={640}
